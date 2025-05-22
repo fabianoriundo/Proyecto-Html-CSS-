@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avicii - Legado Musical</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="css/estilo.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">Avicii</div>
+      <ul class="nav-links">
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#carrera">Carrera</a></li>
+        <li><a href="#discografia">Discografía</a></li>
+        <li><a href="#musica">Música</a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Cambiar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="img/logo.png" alt="Avicii" />
+      <div class="hero-text">
+        <h1>Avicii</h1>
+        <p>El legado eterno del maestro del EDM</p>
+      </div>
+      <div class="music-player">
+  <div class="track-info">
+    <i class="fas fa-music"></i>
+    <span id="current-track">Cargando...</span>
+  </div>
+  <button id="play-pause" aria-label="Pausar">
+    <i class="fas fa-pause"></i>
+  </button>
+</div>
+
+    </section>
+
+    <section id="historia" class="section">
+      <h2>Historia</h2>
+      <p>
+        Avicii, cuyo nombre real fue Tim Bergling, nació en Estocolmo, Suecia, el 8 de septiembre de 1989. Desde joven mostró una gran pasión por la música, influenciado por géneros como el house progresivo, el electro y el pop. A los 16 años comenzó a producir pistas en su habitación y a compartirlas en foros en línea, donde rápidamente captó la atención de productores y DJs establecidos.
+      </p>
+      <p>
+        Su apodo, Avicii, proviene de una palabra del budismo que hace referencia al nivel más bajo del infierno, aunque él mismo explicó que simplemente le gustó cómo sonaba y que, además, necesitaba un nombre disponible en MySpace en ese momento.
+      </p>
+      <div class="gallery">
+        <img src="img/joven.webp" alt="Avicii joven" />
+        <img src="img/vivo.jpg" alt="Avicii en vivo" />
+        <img src="img/estudio.jpg" alt="Avicii en el estudio" />
+      </div>
+    </section>
+
+    <section id="carrera" class="section">
+      <h2>Carrera</h2>
+      <p>
+        Su ascenso a la fama fue meteórico gracias a su capacidad de fusionar géneros musicales y crear melodías memorables. En 2010, Avicii obtuvo reconocimiento mundial con su sencillo “Seek Bromance”, pero fue en 2011 con “Levels” que conquistó las pistas de baile a nivel internacional.
+      </p>
+      <p>
+        Colaboró con artistas de renombre como Coldplay, Madonna, Aloe Blacc y Rita Ora, y fue pionero en combinar música electrónica con instrumentos y estilos acústicos, como se evidenció en su éxito "Wake Me Up". Este enfoque lo llevó a actuar en los festivales de música más importantes del mundo, como Ultra Music Festival, Tomorrowland y Coachella.
+      </p>
+      <div class="career-cards">
+        <article>
+          <img src="img/premios.jpg" alt="Premios" />
+          <h3>Premios</h3>
+          <p>Ganador de premios Billboard, MTV, American Music Awards y dos nominaciones al Grammy.</p>
+        </article>
+        <article>
+          <img src="img/giras.jpg" alt="Giras" />
+          <h3>Giras Mundiales</h3>
+          <p>Más de 100 conciertos y presentaciones en 60 países alrededor del mundo.</p>
+        </article>
+        <article>
+          <img src="img/colab.jpg" alt="Colaboraciones" />
+          <h3>Colaboraciones</h3>
+          <p>Trabajó con Coldplay, Madonna, Rita Ora, Aloe Blacc, Lenny Kravitz y David Guetta.</p>
+        </article>
+      </div>
+    </section>
+
+<section id="discografia" class="section">
+  <h2>Discografía Destacada</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn prev" aria-label="Anterior">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="carousel">
+      <!-- Álbumes -->
+<div class="carousel-item" data-album="album-true">
+  <img src="img/true.png" alt="Álbum True" />
+  <h3>True (2013)</h3>
+  <p>Incluye "Wake Me Up".</p>
+</div>
+<div class="carousel-item" data-album="album-stories">
+  <img src="img/stories.png" alt="Álbum Stories" />
+  <h3>Stories (2015)</h3>
+  <p>Un viaje personal con colaboraciones emotivas.</p>
+</div>
+<div class="carousel-item" data-album="album-avicii01">
+  <img src="img/avicci01.jpg" alt="Avicii 01" />
+  <h3>Avīci (01) (2017)</h3>
+  <p>Último EP antes de retirarse.</p>
+</div>
+<div class="carousel-item" data-album="album-tim">
+  <img src="img/tim.jpg" alt="Álbum Tim" />
+  <h3>Tim (2019)</h3>
+  <p>Álbum póstumo lleno de mensajes personales.</p>
+</div>
+    </div>
+    <button class="carousel-btn next" aria-label="Siguiente">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</section>
+
+<!-- Modal de álbum -->
+<div id="album-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="modal-close" role="button" aria-label="Cerrar modal">&times;</span>
+    <img id="album-cover" src="" alt="Carátula del álbum" />
+    <h3 id="album-title"></h3>
+    <p id="album-info"></p>
+  </div>
+</div>
+    <section id="musica" class="section">
+      <h2>Música</h2>
+      <p>Disfruta algunos de sus mejores éxitos y conoce su historia:</p>
+      <div class="music-list">
+        <div class="music-item">
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IcrbM1l_BoI?si=rTRcqIx1eGgQSF51" title="Wake me up"></iframe>
+          <h4>Wake Me Up</h4>
+        </div>
+        <div class="music-item">
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_ovdm2yX4MA?si=oBVBJmzISw4vwLXl" title="Levels"></iframe>
+          <h4>Levels</h4>
+        </div>
+        <div class="music-item">
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6Cp6mKbRTQY?si=paOtp3_MjpE2n0Ac" title="Hey Brother"></iframe>
+          <h4>Hey Brother</h4>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="img-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="caption" tabindex="-1">
+    <span class="modal-close" role="button" aria-label="Cerrar modal">&times;</span>
+    <img class="modal-content" id="modal-img" alt="Imagen ampliada" />
+    <div id="caption"></div>
+  </div>
+
+  <footer>
+    <p>© 2025 Avicii Tribute. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

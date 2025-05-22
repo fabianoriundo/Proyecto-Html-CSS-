@@ -1,0 +1,776 @@
+:root {
+  /* Modo Claro */
+  --accent-color: #ffb347; /* naranja suave, como atardecer */
+  --secondary-color: #6ec6ff; /* azul claro, cielo fresco */
+  --text-color-light: #1c1c1c;
+  --bg-color-light: #fffaf3; /* fondo claro cálido */
+  --card-bg-light: #ffffff;
+  --shadow-light: rgba(255, 179, 71, 0.25);
+
+  /* Modo Oscuro */
+  --accent-color-dark: #ff8c42; /* naranja más intenso */
+  --secondary-color-dark: #4aa7ff; /* azul vibrante */
+  --text-color-dark: #f0f0f0;
+  --bg-color-dark: #141414; /* fondo muy oscuro */
+  --card-bg-dark: #1f1f1f;
+  --shadow-dark: rgba(0, 0, 0, 0.7);
+}
+
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.dark-theme {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+  }
+  
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar {
+    background-color: var(--card-bg-light);
+    box-shadow: 0 3px 10px var(--shadow-light);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  body.dark-theme .navbar {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 3px 10px var(--shadow-dark);
+  }
+  
+  .logo {
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--accent-color);
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    font-weight: 600;
+    font-size: 1rem;
+    color: inherit;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--accent-color);
+  }
+  
+  #theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    transition: color 0.3s;
+  }
+  
+  #theme-toggle:hover {
+    color: #9ea19f;
+  }
+  
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #0c0c0c, #fff);
+    color: white;
+  }
+  
+  .hero img {
+    width: 350px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.4s;
+  }
+  .hero img:hover {
+    transform: scale(1.05);
+  }
+  
+  .hero-text {
+    max-width: 450px;
+  }
+  
+  .hero-text h1 {
+    font-size: 3.2rem;
+    margin-bottom: 0.2rem;
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .hero-text p {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .hero-text audio {
+    width: 100%;
+    outline: none;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  }
+  
+  .section {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  
+  .section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  /* Historia */
+  .gallery {
+    display: flex;
+    gap: 1rem;           /* espacio entre imágenes */
+    justify-content: center;
+    flex-wrap: wrap;     /* para que se ajusten en dispositivos pequeños */
+    margin-top: 1rem;
+  }
+  
+  .gallery img {
+    width: 250px;        /* tamaño fijo pero se puede ajustar */
+    height: 150px;       /* altura fija para uniformidad */
+    object-fit: cover;   /* para que la imagen recorte manteniendo proporción */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  /* Carrera */
+  .career-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  
+  .career-cards article {
+    background-color: var(--card-bg-light);
+    box-shadow: 0 8px 20px var(--shadow-light);
+    border-radius: 20px;
+    max-width: 300px;
+    padding: 1rem;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+    cursor: default;
+  }
+  
+  body.dark-theme .career-cards article {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 8px 20px var(--shadow-dark);
+  }
+  
+  .career-cards article:hover {
+    box-shadow: 0 15px 35px var(--accent-color);
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+  
+  .career-cards img {
+    width: 100%;
+    border-radius: 18px;
+    margin-bottom: 0.8rem;
+    user-select: none;
+  }
+  
+  /* Carrusel discografía */
+  .carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 2rem auto 0;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    gap: 1.8rem;
+    padding: 1rem 0;
+  }
+  
+  .carousel-item {
+    min-width: 280px;
+    background-color: var(--card-bg-light);
+    border-radius: 15px;
+    box-shadow: 0 8px 15px var(--shadow-light);
+    padding: 1rem;
+    text-align: center;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+    cursor: grab;
+  }
+  
+  body.dark-theme .carousel-item {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 8px 15px var(--shadow-dark);
+  }
+  
+  .carousel-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    border-radius: 15px;
+    user-select: none;
+    margin-bottom: 0.8rem;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    transition: background-color 0.3s;
+    user-select: none;
+    z-index: 10;
+  }
+  
+  .carousel-btn:hover {
+    background-color: #0f7c31;
+  }
+  
+  .carousel-btn.prev {
+    left: -35px;
+  }
+  
+  .carousel-btn.next {
+    right: -35px;
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-btn.prev {
+      left: 5px;
+    }
+    .carousel-btn.next {
+      right: 5px;
+    }
+  }
+  
+  /* Música */
+  .music-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .music-item {
+    max-width: 320px;
+    background-color: var(--card-bg-light);
+    border-radius: 18px;
+    box-shadow: 0 8px 20px var(--shadow-light);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  body.dark-theme .music-item {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 8px 20px var(--shadow-dark);
+  }
+  
+  .music-item:hover {
+    box-shadow: 0 15px 35px var(--accent-color);
+  }
+  
+  .music-item iframe {
+    width: 100%;
+    height: 180px;
+    border: none;
+  }
+  
+  .music-item h4 {
+    margin: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--accent-color);
+  }
+  
+  /* Modal de imagen */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1500; 
+    padding-top: 60px; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    animation: zoomIn 0.3s ease;
+  }
+  
+  @keyframes zoomIn {
+    from {transform: scale(0.7); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 20px; right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .modal-close:hover {
+    color: var(--accent-color);
+  }
+  
+  #caption {
+    margin: 15px auto;
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--card-bg-light);
+    color: var(--accent-color);
+    font-weight: 600;
+    box-shadow: inset 0 1px 5px var(--shadow-light);
+    margin-top: 3rem;
+    transition: background-color 0.3s;
+  }
+  
+  body.dark-theme footer {
+    background-color: var(--card-bg-dark);
+    box-shadow: inset 0 1px 5px var(--shadow-dark);
+  }
+  
+  /* Responsive general */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+    }
+    .hero img {
+      width: 90%;
+    }
+    .nav-links {
+      gap: 1rem;
+    }
+    .career-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .carousel {
+      overflow-x: scroll;
+    }
+    .music-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 10px;
+    scroll-padding-left: 20px;
+    scroll-behavior: smooth;
+  }
+  
+  .carousel-item {
+    flex: 0 0 220px;  /* Ancho fijo */
+    height: 350px;    /* Alto fijo */
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+  
+  .carousel-item img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .carousel-item h3 {
+    font-size: 1.2rem;
+    margin: 0 0 8px;
+    text-align: center;
+    color: var(--text-color-light)var(--card-bg-dark);
+  }
+  
+  .carousel-item p {
+    font-size: 0.9rem;
+    color: var(--text-color-light)var(--card-bg-dark);
+    text-align: center;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+  
+  /* Botones flechas */
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(34, 34, 34, 0.7);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-btn:hover {
+    background-color: rgba(34, 34, 34, 0.9);
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  .carousel-btn i {
+    font-size: 18px;
+  }
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(30, 27, 46, 0.95);
+}
+
+.modal-content {
+  background: var(--card-bg-dark);
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  color: var(--text-color-dark);
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.modal-content img {
+  max-width: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-close {
+  color: var(--text-color-dark);
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: var(--card-bg-dark);
+  color: var(--text-color-dark);
+  padding: 10px 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  animation: fadeIn 1s ease;
+  z-index: 1000;
+}
+
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.track-info i {
+  font-size: 18px;
+}
+
+#play-pause {
+  background: none;
+  border: none;
+  color: var(--text-color-dark);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#play-pause:focus {
+  outline: none;
+}
+/* Animaciones keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtleBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 8px var(--accent-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--accent-color);
+  }
+  100% {
+    box-shadow: 0 0 8px var(--accent-color);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hero Section Animations */
+.hero-text h1, .hero-text p {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero img {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero img:hover {
+  animation: subtleBounce 0.6s ease;
+}
+
+/* Carrusel Items Animations */
+.carousel-item {
+  animation: fadeUp 0.7s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.carousel-item:hover {
+  animation: subtleBounce 0.6s ease;
+}
+
+/* Carrusel Buttons */
+.carousel-btn {
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Modal Animations */
+.modal-content {
+  animation: fadeIn 0.5s ease, glowPulse 3s infinite alternate;
+}
+
+/* Music Player Animations */
+.music-player {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.music-player:hover {
+  transform: translateY(-5px);
+  animation: glowPulse 3s infinite alternate;
+}
+
+/* Enlaces animados */
+a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 5px var(--accent-color);
+}
+
+/* Definir color de acento si no lo tienes aún */
+:root {
+  --accent-color: #f39c12;
+}
+/* Splash Screen */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #111, #333, #ddd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 1s ease;
+  cursor: pointer;
+}
+
+.splash-screen img {
+  width: 160px;
+  margin-bottom: 25px;
+  animation: subtleBounce 2s infinite alternate;
+}
+
+.splash-screen h1 {
+  font-size: 3.2rem;
+  color: #fff;
+  margin: 0;
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.splash-screen p {
+  font-size: 1.3rem;
+  color: #ddd;
+  margin-top: 12px;
+  animation: fadeUp 2s ease forwards;
+}
+
+.splash-screen.hide {
+  animation: fadeOut 1s ease forwards;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes subtleBounce {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
